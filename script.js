@@ -59,7 +59,7 @@ window.addEventListener('scroll', setActiveNavLink);
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
 
@@ -283,11 +283,11 @@ console.log('%cDesenvolvido com dedicação e profissionalismo', 'color: #d4af37
 if ('ontouchstart' in window) {
     const buttons = document.querySelectorAll('.btn, .social-link, .nav-link');
     buttons.forEach(button => {
-        button.addEventListener('touchstart', function() {
+        button.addEventListener('touchstart', function () {
             this.style.transform = 'scale(0.95)';
         });
 
-        button.addEventListener('touchend', function() {
+        button.addEventListener('touchend', function () {
             this.style.transform = '';
         });
     });
@@ -322,4 +322,18 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.querySelector('.hero')?.classList.add('visible');
     }, 100);
+});
+
+const cookieBanner = document.getElementById('cookieBanner');
+const acceptCookies = document.getElementById('acceptCookies');
+
+if (!localStorage.getItem('cookiesAccepted')) {
+    cookieBanner.style.display = 'flex';
+} else {
+    cookieBanner.style.display = 'none';
+}
+
+acceptCookies.addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    cookieBanner.style.display = 'none';
 });
