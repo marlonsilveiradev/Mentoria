@@ -1360,8 +1360,7 @@ section {
     }
 
     .gallery-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(11, 150px);
+        grid-template-columns: 1fr;        
     }
 
    
